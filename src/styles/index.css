@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@theme {
+  --color-ink: #0A0A0A; --color-paper: #F2F0E9; --color-acid: #C8FF45;
+  --color-mute: #92928D; --color-line: #2B2B29;
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+}
+html { background: #0A0A0A; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+body { margin: 0; background: var(--color-ink); color: var(--color-paper); font-family: var(--font-sans); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+body::after { content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 90; opacity: .07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+:focus-visible { outline: 2px solid var(--color-acid); outline-offset: 4px; }
+::selection { background: var(--color-acid); color: var(--color-ink); }
+section { scroll-margin-top: 4rem; }
+@media (hover: hover) and (pointer: fine) { .has-cursor, .has-cursor a, .has-cursor button { cursor: none; } }
+.pad { padding-inline: clamp(1.25rem, 4vw, 4rem); }
+.label { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--color-mute); }
+.btn { display: inline-flex; align-items: center; gap: .5rem; min-height: 48px; padding: .75rem 1.5rem; border: 1px solid var(--color-paper); font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; transition: background .25s, color .25s, border-color .25s; }
+.btn:hover { background: var(--color-acid); border-color: var(--color-acid); color: var(--color-ink); }
+.ulink { background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat; transition: background-size .3s, color .25s; }
+.ulink:hover { background-size: 100% 1px; color: var(--color-acid); }
